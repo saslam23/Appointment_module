@@ -1,0 +1,69 @@
+﻿{
+   "CodeGenerationMode": 2,
+   "ContextClassName": "appointment_moduleContext",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": true,
+   "ModelNamespace": null,
+   "OutputContextPath": "Data",
+   "OutputPath": "Models",
+   "PreserveCasingWithRegex": true,
+   "ProjectRootNamespace": "appointment_module_api",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 0,
+   "Tables": [
+      {
+         "Name": "[dbo].[appointments]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[business]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[business_hours]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[services]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[create_appointment]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[get_all_services]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[get_times_for_service]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[selecting_business_services]",
+         "ObjectType": 1
+      }
+   ],
+   "UiHint": "saadpc.appointment_module.dbo",
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": false,
+   "UseDbContextSplitting": false,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseHierarchyId": false,
+   "UseInflector": false,
+   "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": false,
+   "UseNoConstructor": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoNavigations": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UseSchemaFolders": false,
+   "UseSpatial": false,
+   "UseT4": false
+}
