@@ -42,6 +42,7 @@ export default function Step3({getDateTime, selectedServiceName, selectedService
     }
     
     setTimes(list)
+    console.log(times);
 
     }
     
@@ -60,7 +61,7 @@ const handleChangeDate = async (selectedDate) =>{
 
 }
 useEffect(() =>{
-  axios.get(`https://localhost:7004/api/get_times_for_service/serviceDate=${dateValue}&serviceId=${selectedServiceId}`)
+  axios.get(`https://instabookapi.azurewebsites.net/api/get_times_for_service/serviceDate=${dateValue}&serviceId=${selectedServiceId}`)
     .then((results)=>{
       console.log(results.data[0], 'hereeeeeee')
       timeList( new Date("1970-01-01T" + results.data[0].startTime), new Date("1970-01-01T" + results.data[0].endTime), results.data[0].length, results.data[0].interval, JSON.parse(results.data[0].takenAppts) )
@@ -84,7 +85,7 @@ useEffect(() =>{
        </FormControl>
        <br></br>
        <br></br>
-    {times.length > 0 && <FormControl fullWidth>
+    {times.length > 1 && <FormControl fullWidth>
        <InputLabel id="demo-simple-select-label">Time</InputLabel>
   <Select
     labelId="demo-simple-select-label"
@@ -100,6 +101,7 @@ useEffect(() =>{
     )}
   </Select>
       </FormControl>}
+      {times.length === 1 && <h3>Closed</h3>}
     </Box>
   );
 }

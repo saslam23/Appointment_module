@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "apis1": {
+      "ignored": "true",
+      "type": "apis"
+    },
+    "secrets2": {
+      "secretStore": null,
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.KeyVault/vaults/appointment-vault",
+      "type": "secrets.keyVault",
+      "connectionId": "appointmentModConn"
+    },
+    "mssql1": {
+      "secretStore": "AzureKeyVault",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/appointmentmoduleserver/databases/appointmentDB",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:appointmentConn"
+    }
+  }
+}

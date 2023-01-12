@@ -14,6 +14,7 @@ namespace appointment_module_api.Data
     {
         Task<int> create_appointmentAsync(string firstName, string lastName, string startTime, string endTime, int? serviceId, int? confirmed, string phoneNumber, string email, DateTime? apptDate, int? lengthMinutes, int? businessId, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<get_all_servicesResult>> get_all_servicesAsync(int? serviceId, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
+        Task<List<get_business_for_adminResult>> get_business_for_adminAsync(string admin, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<get_times_for_serviceResult>> get_times_for_serviceAsync(DateTime? apptDate, int? serviceId, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
         Task<List<selecting_business_servicesResult>> selecting_business_servicesAsync(int? businessIdParam, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default);
     }

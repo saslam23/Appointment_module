@@ -2,6 +2,7 @@ using appointment_module_api.Data;
 using appointment_module_api.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Azure.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,22 +13,29 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<appointment_moduleContext>(o => o.UseSqlServer("Data Source=SAADPC;Initial Catalog=appointment_module;Integrated Security=True;Encrypt=false;TrustServerCertificate=True;"));
-builder.Services.AddScoped<appointment_moduleContextProcedures>();
+builder.Configuration.SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json");
 
+var dbConnectionString = builder.Configuration.GetConnectionString("appointmentAppConn");
+//var dbConnectionString = builder.Configuration.GetConnectionString("Data Source=SAADPC;Initial Catalog=appointment_module; Integrated Security=true;");
+builder.Services.AddDbContext<appointment_moduleContext>(o => o.UseSqlServer(dbConnectionString));
+builder.Services.AddScoped<appointment_moduleContextProcedures>();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll",
-        builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:3000")
+        builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().WithOrigins("https://instabook.azurewebsites.net", "http://localhost:3000")
     );
 });
 
 var app = builder.Build();
 
-
+/*using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<appointment_moduleContext>();
+    db.Database.Migrate();
+}*/
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
 {
     app.UseCors("AllowAll");
     app.UseSwagger();
@@ -38,6 +46,13 @@ app.MapGet("api/business_services/{id}", async ([FromServices] appointment_modul
 {
     var op = new OutputParameter<int>();
     return await db.selecting_business_servicesAsync(businessId, op);
+
+});
+
+app.MapGet("api/business_admin/{admin}", async ([FromServices] appointment_moduleContextProcedures db, string admin) =>
+{
+    var op = new OutputParameter<int>();
+    return await db.get_business_for_adminAsync(admin, op);
 
 });
 
@@ -100,8 +115,9 @@ app.MapPost("api/appt_confirmed", async ([FromServices] appointment_moduleContex
 });
 */
 
-app.UseHttpsRedirection();
 
+app.UseHttpsRedirection();
+app.UseCors("AllowAll");
 app.UseAuthorization();
 
 app.MapControllers();

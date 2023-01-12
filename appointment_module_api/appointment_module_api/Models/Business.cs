@@ -10,5 +10,6 @@ namespace appointment_module_api.Models
         public long BusinessId { get; set; }
         public string BusinessName { get; set; }
         public string Icon { get; set; }
+        public string Admin { get; set; }
     }
 }

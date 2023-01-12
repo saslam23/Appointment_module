@@ -57,7 +57,7 @@ namespace appointment_module_api.Data
                     .HasColumnName("email");
 
                 entity.Property(e => e.EndTime)
-                    .HasMaxLength(10)
+                    .HasMaxLength(20)
                     .IsUnicode(false)
                     .HasColumnName("end_time");
 
@@ -81,7 +81,7 @@ namespace appointment_module_api.Data
                 entity.Property(e => e.ServiceId).HasColumnName("service_id");
 
                 entity.Property(e => e.StartTime)
-                    .HasMaxLength(10)
+                    .HasMaxLength(20)
                     .IsUnicode(false)
                     .HasColumnName("start_time");
             });
@@ -91,6 +91,11 @@ namespace appointment_module_api.Data
                 entity.ToTable("business");
 
                 entity.Property(e => e.BusinessId).HasColumnName("business_id");
+
+                entity.Property(e => e.Admin)
+                    .HasMaxLength(200)
+                    .IsUnicode(false)
+                    .HasColumnName("admin");
 
                 entity.Property(e => e.BusinessName)
                     .IsRequired()

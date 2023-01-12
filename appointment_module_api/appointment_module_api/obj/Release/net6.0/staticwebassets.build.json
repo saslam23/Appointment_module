@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "4yWfjoxAe+GbhXRHh2J0TAAi2XMKp08ytZ7rIFxnuUU=",
+  "Source": "appointment_module_api",
+  "BasePath": "_content/appointment_module_api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

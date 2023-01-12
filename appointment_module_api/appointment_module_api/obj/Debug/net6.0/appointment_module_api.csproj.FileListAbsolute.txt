@@ -180,3 +180,15 @@ D:\Dem files\Web Dev\appointment_module\appointment_module_api\appointment_modul
 D:\Dem files\Web Dev\appointment_module\appointment_module_api\appointment_module_api\obj\Debug\net6.0\appointment_module_api.pdb
 D:\Dem files\Web Dev\appointment_module\appointment_module_api\appointment_module_api\obj\Debug\net6.0\appointment_module_api.genruntimeconfig.cache
 D:\Dem files\Web Dev\appointment_module\appointment_module_api\appointment_module_api\obj\Debug\net6.0\ref\appointment_module_api.dll
+D:\Dem files\Web Dev\appointment_module\appointment_module_api\appointment_module_api\bin\Debug\net6.0\Azure.Extensions.AspNetCore.Configuration.Secrets.dll
+D:\Dem files\Web Dev\appointment_module\appointment_module_api\appointment_module_api\bin\Debug\net6.0\Azure.Security.KeyVault.Certificates.dll
+D:\Dem files\Web Dev\appointment_module\appointment_module_api\appointment_module_api\bin\Debug\net6.0\Azure.Security.KeyVault.Secrets.dll
+D:\Dem files\Web Dev\appointment_module\appointment_module_api\appointment_module_api\bin\Debug\net6.0\Microsoft.Azure.KeyVault.dll
+D:\Dem files\Web Dev\appointment_module\appointment_module_api\appointment_module_api\bin\Debug\net6.0\Microsoft.Azure.KeyVault.WebKey.dll
+D:\Dem files\Web Dev\appointment_module\appointment_module_api\appointment_module_api\bin\Debug\net6.0\Microsoft.Azure.Services.AppAuthentication.dll
+D:\Dem files\Web Dev\appointment_module\appointment_module_api\appointment_module_api\bin\Debug\net6.0\Microsoft.Extensions.Configuration.AzureKeyVault.dll
+D:\Dem files\Web Dev\appointment_module\appointment_module_api\appointment_module_api\bin\Debug\net6.0\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll
+D:\Dem files\Web Dev\appointment_module\appointment_module_api\appointment_module_api\bin\Debug\net6.0\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
+D:\Dem files\Web Dev\appointment_module\appointment_module_api\appointment_module_api\bin\Debug\net6.0\Microsoft.Rest.ClientRuntime.dll
+D:\Dem files\Web Dev\appointment_module\appointment_module_api\appointment_module_api\bin\Debug\net6.0\Microsoft.Rest.ClientRuntime.Azure.dll
+D:\Dem files\Web Dev\appointment_module\appointment_module_api\appointment_module_api\bin\Debug\net6.0\Newtonsoft.Json.dll

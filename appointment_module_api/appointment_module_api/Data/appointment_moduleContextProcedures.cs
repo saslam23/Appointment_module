@@ -35,6 +35,7 @@ namespace appointment_module_api.Data
         protected void OnModelCreatingGeneratedProcedures(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<get_all_servicesResult>().HasNoKey().ToView(null);
+            modelBuilder.Entity<get_business_for_adminResult>().HasNoKey().ToView(null);
             modelBuilder.Entity<get_times_for_serviceResult>().HasNoKey().ToView(null);
             modelBuilder.Entity<selecting_business_servicesResult>().HasNoKey().ToView(null);
         }
@@ -84,7 +85,7 @@ namespace appointment_module_api.Data
                 new SqlParameter
                 {
                     ParameterName = "endTime",
-                    Size = 20,
+                    Size = 2,
                     Value = endTime ?? Convert.DBNull,
                     SqlDbType = System.Data.SqlDbType.NVarChar,
                 },
@@ -161,6 +162,33 @@ namespace appointment_module_api.Data
                 parameterreturnValue,
             };
             var _ = await _context.SqlQueryAsync<get_all_servicesResult>("EXEC @returnValue = [dbo].[get_all_services] @serviceId", sqlParameters, cancellationToken);
+
+            returnValue?.SetValue(parameterreturnValue.Value);
+
+            return _;
+        }
+
+        public virtual async Task<List<get_business_for_adminResult>> get_business_for_adminAsync(string admin, OutputParameter<int> returnValue = null, CancellationToken cancellationToken = default)
+        {
+            var parameterreturnValue = new SqlParameter
+            {
+                ParameterName = "returnValue",
+                Direction = System.Data.ParameterDirection.Output,
+                SqlDbType = System.Data.SqlDbType.Int,
+            };
+
+            var sqlParameters = new []
+            {
+                new SqlParameter
+                {
+                    ParameterName = "admin",
+                    Size = 200,
+                    Value = admin ?? Convert.DBNull,
+                    SqlDbType = System.Data.SqlDbType.VarChar,
+                },
+                parameterreturnValue,
+            };
+            var _ = await _context.SqlQueryAsync<get_business_for_adminResult>("EXEC @returnValue = [dbo].[get_business_for_admin] @admin", sqlParameters, cancellationToken);
 
             returnValue?.SetValue(parameterreturnValue.Value);
 

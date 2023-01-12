@@ -53,6 +53,9 @@ export default function VerticalLinearStepper() {
       setSelectedServiceId(null);
 
     }
+    if(activeStep == 3){
+      setSelectedTime(null);
+    }
   };
 
   const getServiceAndLengthMinutes = (name, serviceId, length) =>{
@@ -91,7 +94,7 @@ const getDateTime = (date, time) =>{
       setErrorMessage(null);
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
       if(index === 0){
-        await axios.get(`https://localhost:7004/api/business_services/{id}?businessId=${businessId}`)
+        await axios.get(`https://instabookapi.azurewebsites.net/api/business_services/{id}?businessId=${businessId}`)
         .then((results) =>{
           setServices(results.data);
         })
@@ -120,7 +123,7 @@ const getDateTime = (date, time) =>{
 
           console.log(newAppt, 'APPOINTMENT INFO')
           try {
-            await axios.post("https://localhost:7004/api/appt_confirmed", newAppt)
+            await axios.post("https://instabookapi.azurewebsites.net/api/appt_confirmed", newAppt)
             .then((results) =>{
               setDuplicateCheck(results.data);
             console.log(results.data);
@@ -211,7 +214,7 @@ const getDateTime = (date, time) =>{
         <Paper square elevation={0} sx={{ p: 3 }}>
           
           {duplicateCheck == 1 ? 
-          <Typography variant="h5" style={{color:"#009688"}}>You&apos;re appointment as been confirmed!</Typography>:
+          <Typography variant="h5" style={{color:"#009688"}}>You&apos;re appointment on {apptDate} at {selectedTime} for {selectedServiceName} as been confirmed!</Typography>:
           <Typography variant="h5" style={{color:"#ba000d"}}>We're sorry, that appointment time slot is taken. Please select another time.</Typography>
 }
           <Button onClick={handleReset} sx={{ mt: 1, mr: 1 }}>

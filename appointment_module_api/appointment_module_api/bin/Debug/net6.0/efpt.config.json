@@ -39,6 +39,10 @@
          "ObjectType": 1
       },
       {
+         "Name": "[dbo].[get_business_for_admin]",
+         "ObjectType": 1
+      },
+      {
          "Name": "[dbo].[get_times_for_service]",
          "ObjectType": 1
       },

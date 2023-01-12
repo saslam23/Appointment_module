@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "apis1": {
+      "type": "apis"
+    },
+    "secrets1": {
+      "type": "secrets",
+      "connectionId": "appointmentAppConn"
+    },
+    "secrets2": {
+      "type": "secrets",
+      "connectionId": "appointmentModConn"
+    },
+    "mssql1": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:appointmentConn",
+      "dynamicId": null
+    }
+  }
+}

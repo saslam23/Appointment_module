@@ -16,7 +16,7 @@ namespace appointment_module_api.Models
         public int Confirmed { get; set; }
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
-        public DateTime? ApptDate { get; set; }
+        public DateTime ApptDate { get; set; }
         public int? LengthMinutes { get; set; }
         public int? BusinessId { get; set; }
     }

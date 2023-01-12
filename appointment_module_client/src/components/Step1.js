@@ -38,9 +38,9 @@ export default function Step1({getBusinessId}) {
   useEffect(() =>{
     //GET REQUEST TO POPULATE listOfBusinesses state array  d
 
-    axios.get("https://localhost:7004/api/get_all_businesses")
+    axios.get("https://instabookapi.azurewebsites.net/api/get_all_businesses")
     .then((results) =>{
-      console.log(results.data)
+
       setListOfBusinesses(results.data);
 
     })
